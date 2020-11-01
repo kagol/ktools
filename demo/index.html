@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>KTools Demo</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <script type="module">
+    import kt from './ktools.esm.js';
+    const { stairStepAccessTable } = kt;
+
+    const color = stairStepAccessTable(7, [ 0, 3, 6, 9, 10 ], [ '#ebedf0', '#c6e48b', '#7bc96f', '#239a3b', '#196127' ]);
+    console.log('color:', color);
+  </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+{
+  "name": "ktools",
+  "version": "1.0.0",
+  "description": "前端工具库",
+  "main": "dist/ktools.cjs.js",
+  "module": "dist/ktools.esm.js",
+  "browser": "dist/ktools.umd.js",
+  "scripts": {
+    "start": "rollup -c -w",
+    "build": "rollup -c && npm run copy",
+    "copy": "cp dist/ktools.esm.js demo",
+    "test": "ts-node test/test.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kagol/ktools.git"
+  },
+  "keywords": [
+    "toolkit"
+  ],
+  "author": "Kagol",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kagol/ktools/issues"
+  },
+  "homepage": "https://github.com/kagol/ktools#readme",
+  "devDependencies": {
+    "@types/ms": "^0.7.31",
+    "rollup": "^2.33.0",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-typescript": "^1.0.1",
+    "ts-node": "^9.0.0",
+    "tslib": "^2.0.3",
+    "typescript": "^4.0.5"
+  }
+}
