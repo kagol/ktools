@@ -9,7 +9,7 @@
 <body>
   <script type="module">
     import kt from './ktools.esm.js';
-    const { stairStepAccessTable } = kt;
+    const { stairStepAccessTable, rgb2hex } = kt;
 
     const contributionNum = 7;
     const contributionRangeArray = [ 0, 3, 6, 9, 10 ];
@@ -22,6 +22,9 @@
     const grade = [ 'F', 'D', 'C', 'B', 'A' ];
     const score = stairStepAccessTable(studentScore, rangeLimit, grade);
     console.log('score:', score); // B
+
+    const rgb = [12, 48, 120];
+    console.log('hex:', rgb2hex(...rgb));
   </script>
 </body>
 </html>
