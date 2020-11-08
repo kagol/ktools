@@ -33,8 +33,25 @@ var stairStepAccessTable = function (source, sourceRangeArray, targetArray) {
     return target;
 };
 
+/**
+ * RGB颜色转换成16进制色值
+ * @param r 10进制红色
+ * @param g 10进制绿色
+ * @param b 10进制蓝色
+ */
+var rgb2hex = function (r, g, b) {
+    return "#" + hex(r) + hex(g) + hex(b);
+};
+var hex = function (n) {
+    return zeroFill(n.toString(16));
+};
+var zeroFill = function (hex) {
+    return hex.length === 1 ? "0" + hex : hex;
+};
+
 var ktools = {
     stairStepAccessTable: stairStepAccessTable,
+    rgb2hex: rgb2hex,
 };
 
 export default ktools;
