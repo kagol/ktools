@@ -4,15 +4,15 @@
  * @param g 10进制绿色
  * @param b 10进制蓝色
  */
-const rgb2hex = function(r: number, g: number, b: number) {
+const rgb2hex = function(r: number, g: number, b: number): string {
   return `#${hex(r)}${hex(g)}${hex(b)}`;
 }
 
-const hex = function(n: number) {
+const hex = function(n: number): string {
   return zeroFill(n.toString(16));
 }
 
-const zeroFill = function(hex: string) {
+const zeroFill = function(hex: string): string {
   return hex.length === 1 ? `0${hex}` : hex;
 }
 
