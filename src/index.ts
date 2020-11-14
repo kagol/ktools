@@ -14,4 +14,13 @@ const ktools = {
   stairStepAccessTable,
 }
 
+export {
+  chunk,
+  hex2rgb,
+  isColor,
+  isPlainObject,
+  rgb2hex,
+  stairStepAccessTable,
+};
+
 export default ktools;

@@ -1,5 +1,7 @@
 import chunk from 'lodash-es/chunk';
+export { default as chunk } from 'lodash-es/chunk';
 import isPlainObject from 'lodash-es/isPlainObject';
+export { default as isPlainObject } from 'lodash-es/isPlainObject';
 
 /**
  * 判断字符串是否是十六进制的颜色值
@@ -140,3 +142,4 @@ var ktools = {
 };
 
 export default ktools;
+export { hex2rgb, isColor, rgb2hex, stairStepAccessTable };

@@ -4,7 +4,7 @@
   "description": "前端工具库",
   "main": "dist/ktools.cjs.js",
   "module": "dist/ktools.esm.js",
-  "browser": "dist/ktools.umd.js",
+  "browser": "dist/index.js",
   "scripts": {
     "start": "rollup -c -w",
     "build": "rollup -c && npm run copy",
