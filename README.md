@@ -2,8 +2,13 @@
 
 前端工具库
 
-## 工具方法
+## API
 
+- chunk                数组分块
+- hex2rgb              十六进制颜色转十进制颜色
+- isColor              判断是否是十六进制颜色值
+- isPlainObject        判断是否是对象类型
+- rgb2hex              十进制颜色转十六进制颜色
 - stairStepAccessTable 阶梯访问表
 
 ## 本地开发

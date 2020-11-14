@@ -9,7 +9,26 @@
 <body>
   <script type="module">
     import kt from './ktools.esm.js';
-    const { stairStepAccessTable, rgb2hex } = kt;
+    const { 
+      chunk,
+      hex2rgb,
+      isColor,
+      isPlainObject,
+      rgb2hex,
+      stairStepAccessTable,
+    } = kt;
+
+    console.log('chunked array:', chunk('7bc96f', 2)); // [['7', 'b'], ['c', '9'], ['6', 'f']]
+
+    console.log('rgb:', hex2rgb('#7bc96f')); // rgb(123, 201, 111)
+
+    console.log('isColor(#7bc96f):', isColor('#7bc96f')); // true
+    console.log('isColor(#7bc9):', isColor('#7bc9')); // false
+
+    console.log('isPlainObject:', isPlainObject({ '6': '#7bc96f' }));
+
+    const rgb = [12, 48, 120];
+    console.log('hex:', rgb2hex(...rgb));
 
     const contributionNum = 7;
     const contributionRangeArray = [ 0, 3, 6, 9, 10 ];
@@ -22,9 +41,6 @@
     const grade = [ 'F', 'D', 'C', 'B', 'A' ];
     const score = stairStepAccessTable(studentScore, rangeLimit, grade);
     console.log('score:', score); // B
-
-    const rgb = [12, 48, 120];
-    console.log('hex:', rgb2hex(...rgb));
   </script>
 </body>
 </html>

@@ -36,6 +36,8 @@
     "typescript": "^4.0.5"
   },
   "dependencies": {
-    "@kagol/ktools": "0.0.1"
+    "@kagol/ktools": "0.0.1",
+    "@types/lodash-es": "^4.17.3",
+    "lodash-es": "^4.17.15"
   }
 }

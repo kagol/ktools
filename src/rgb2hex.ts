@@ -3,12 +3,28 @@
  * @param r 10进制红色
  * @param g 10进制绿色
  * @param b 10进制蓝色
+ * @example
+ * 输入
+ * [123, 201, 111]
+ * 
+ * 输出
+ * '#7bc96f'
  */
 const rgb2hex = function(r: number, g: number, b: number): string {
-  return `#${hex(r)}${hex(g)}${hex(b)}`;
+  return `#${decimal2hex(r)}${decimal2hex(g)}${decimal2hex(b)}`;
 }
 
-const hex = function(n: number): string {
+/**
+ * 十进制转十六进制，只有一位的自动补零
+ * @param n 
+ * @example
+ * 输入
+ * 123
+ * 
+ * 输出
+ * '7b'
+ */
+const decimal2hex = function(n: number): string {
   return zeroFill(n.toString(16));
 }
 
