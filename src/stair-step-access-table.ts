@@ -20,7 +20,7 @@
  * Output:
  *   '#239a3b'
  */
-const stairStepAccessTable = function(source: number, sourceRangeArray: number[], targetArray: string[]) {
+const stairStepAccessTable = function(source: number, sourceRangeArray: number[], targetArray: string[]): string {
   const maxTarget = targetArray.length - 1;
   let targetIndex = 0;
   let target = targetArray[maxTarget];
