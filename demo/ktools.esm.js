@@ -40,9 +40,9 @@ var stairStepAccessTable = function (source, sourceRangeArray, targetArray) {
  * @param b 10进制蓝色
  */
 var rgb2hex = function (r, g, b) {
-    return "#" + hex(r) + hex(g) + hex(b);
+    return "#" + decimal2hex(r) + decimal2hex(g) + decimal2hex(b);
 };
-var hex = function (n) {
+var decimal2hex = function (n) {
     return zeroFill(n.toString(16));
 };
 var zeroFill = function (hex) {
