@@ -1,3 +1,100 @@
+import chunk from 'lodash-es/chunk';
+import isPlainObject from 'lodash-es/isPlainObject';
+
+/**
+ * 判断字符串是否是十六进制的颜色值
+ * @param value
+ */
+var isColor = function (value) {
+    return /^#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})$/.test(value);
+};
+
+/**
+ * 将十六进制颜色值分割成R/G/B每个色值的数组
+ * @param hex 十六进制颜色值
+ * @example
+ * 输入
+ * '#7bc96f'
+ *
+ * 输出
+ * ['7b', 'c9', '6f']
+ */
+var getRgb = function (hex) {
+    var hexNum = hex.split('#')[1];
+    if (hexNum.length === 3) {
+        return chunk(hexNum, 1).map(function (value) { return value.join(''); });
+    }
+    else if (hexNum.length === 6) {
+        return chunk(hexNum, 2).map(function (value) { return value.join(''); });
+    }
+    else {
+        throw new Error('The hex number is invalid.');
+    }
+};
+/**
+ * 十六进制转十进制
+ * @param value 十六进制字符串
+ * @example
+ * 输入
+ * '7b'
+ *
+ * 输出
+ * 123
+ *
+ */
+var hex2decimal = function (value) {
+    return parseInt(value, 16);
+};
+/**
+ * 十六进制转十进制颜色
+ * @param hex 十六进制颜色值
+ * #example
+ * 输入
+ * '#7bc96f'
+ *
+ * 输出
+ * rgb(123, 201, 111)
+ */
+var hex2rgb = function (hex) {
+    if (!isColor(hex)) {
+        return '';
+    }
+    var _a = getRgb(hex), red = _a[0], green = _a[1], blue = _a[2];
+    return "rgb(" + hex2decimal(red) + ", " + hex2decimal(green) + ", " + hex2decimal(blue) + ")";
+};
+
+/**
+ * RGB颜色转换成16进制色值
+ * @param r 10进制红色
+ * @param g 10进制绿色
+ * @param b 10进制蓝色
+ * @example
+ * 输入
+ * [123, 201, 111]
+ *
+ * 输出
+ * '#7bc96f'
+ */
+var rgb2hex = function (r, g, b) {
+    return "#" + decimal2hex(r) + decimal2hex(g) + decimal2hex(b);
+};
+/**
+ * 十进制转十六进制，只有一位的自动补零
+ * @param n
+ * @example
+ * 输入
+ * 123
+ *
+ * 输出
+ * '7b'
+ */
+var decimal2hex = function (n) {
+    return zeroFill(n.toString(16));
+};
+var zeroFill = function (hex) {
+    return hex.length === 1 ? "0" + hex : hex;
+};
+
 /**
  * @description
  * 阶梯访问表（Stair-Step Access Table），表驱动法的一种。
@@ -33,25 +130,13 @@ var stairStepAccessTable = function (source, sourceRangeArray, targetArray) {
     return target;
 };
 
-/**
- * RGB颜色转换成16进制色值
- * @param r 10进制红色
- * @param g 10进制绿色
- * @param b 10进制蓝色
- */
-var rgb2hex = function (r, g, b) {
-    return "#" + decimal2hex(r) + decimal2hex(g) + decimal2hex(b);
-};
-var decimal2hex = function (n) {
-    return zeroFill(n.toString(16));
-};
-var zeroFill = function (hex) {
-    return hex.length === 1 ? "0" + hex : hex;
-};
-
 var ktools = {
-    stairStepAccessTable: stairStepAccessTable,
+    chunk: chunk,
+    hex2rgb: hex2rgb,
+    isColor: isColor,
+    isPlainObject: isPlainObject,
     rgb2hex: rgb2hex,
+    stairStepAccessTable: stairStepAccessTable,
 };
 
 export default ktools;
