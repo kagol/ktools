@@ -1,6 +1,6 @@
 {
   "name": "ktools",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "前端工具库",
   "main": "dist/ktools.cjs.js",
   "module": "dist/ktools.esm.js",
@@ -9,6 +9,7 @@
     "start": "rollup -c -w",
     "build": "rollup -c && npm run copy",
     "copy": "cp dist/ktools.esm.js demo && cp package.json dist",
+    "publish": "node scripts/publish.js",
     "test": "ts-node test/test.ts"
   },
   "repository": {
@@ -26,11 +27,13 @@
   "homepage": "https://github.com/kagol/ktools#readme",
   "devDependencies": {
     "@types/ms": "^0.7.31",
+    "commander": "^6.2.0",
     "rollup": "^2.33.0",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-typescript": "^1.0.1",
+    "shelljs": "^0.8.4",
     "ts-node": "^9.0.0",
     "tslib": "^2.0.3",
     "typescript": "^4.0.5"
