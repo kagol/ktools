@@ -33,8 +33,10 @@ npm i @kagol/ktools
 
 ``` javascript
 import { 
+  chunk,
   hex2rgb,
   isColor,
+  isPlainObject,
   rgb2hex,
   stairStepAccessTable,
 } from '@kagol/ktools';
