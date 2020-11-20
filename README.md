@@ -23,11 +23,29 @@ npm start
 npm run build
 ```
 
+## 安装
+
+``` javascript
+npm i @kagol/ktools
+```
+
 ## 使用
 
 ``` javascript
-import kt from './ktools.esm.js';
-const { stairStepAccessTable } = kt;
+import { 
+  hex2rgb,
+  isColor,
+  rgb2hex,
+  stairStepAccessTable,
+} from '@kagol/ktools';
+
+console.log('chunked array:', chunk('7bc96f', 2)); // [['7', 'b'], ['c', '9'], ['6', 'f']]
+console.log('rgb:', hex2rgb('#7bc96f')); // rgb(123, 201, 111)
+console.log('isColor(#7bc96f):', isColor('#7bc96f')); // true
+console.log('isColor(#7bc9):', isColor('#7bc9')); // false
+console.log('isPlainObject:', isPlainObject({ '6': '#7bc96f' }));
+const rgb = [12, 48, 120];
+console.log('hex:', rgb2hex(...rgb));
 
 // 案例1
 /**
