@@ -48,14 +48,19 @@ export const hex2decimal = function(value: string) {
  * 输出
  * rgb(123, 201, 111)
  */
-const hex2rgb = function(hex: string): string {
+const hex2rgb = function(hex: string, format: 'color' | 'array' = 'array'): number[] | string {
   if (!isColor(hex)) {
     return '';
   }
 
   const [red, green, blue] = getRgb(hex);
 
-  return `rgb(${hex2decimal(red)}, ${hex2decimal(green)}, ${hex2decimal(blue)})`;
+  let rgb: number[] | string = [hex2decimal(red), hex2decimal(green), hex2decimal(blue)];
+  if (format === 'color') {
+    rgb = `rgb(${hex2decimal(red)}, ${hex2decimal(green)}, ${hex2decimal(blue)})`;
+  }
+
+  return rgb;
 }
 
 export default hex2rgb;
