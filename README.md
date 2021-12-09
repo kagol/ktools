@@ -13,7 +13,7 @@
 
 ## 本地开发
 
-``` javascript
+``` sh
 npm start
 ```
 
