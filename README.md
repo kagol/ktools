@@ -74,7 +74,7 @@ console.log('score:', score); // B
 
 ## 示例
 
-```
+```sh
 cd demo
 anywhere
 ```
